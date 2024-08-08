@@ -1,0 +1,59 @@
+.js_gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+  gap: 20px;
+  padding: 20px;
+}
+
+.js_img {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.js_img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.js_img:hover img {
+  opacity: 0.3; /* Dim the image */
+}
+
+.js_img .js_name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.js_img:hover .js_name {
+  opacity: 1; /* Show breed name on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .js_gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row on medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .js_gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .js_gallery {
+    grid-template-columns: 1fr; /* 1 image per row on very small screens */
+  }
+}
